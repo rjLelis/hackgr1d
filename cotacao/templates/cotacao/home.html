@@ -11,12 +11,22 @@
     {% block content %}
         <form method="POST" >
             {% csrf_token %}
-            <input type="text" name="destinos">
-            <input type="text" name="maisDe70">
-            <input type="text" name="menosDe70">
-            <input type="date" name='dataSaida'>
+            <label for="destinos">Destinos</label>
+            <input type="text" name="destinos" id="destinos">
+
+            <label for="maisDe70">Quatidade de passageiros (de 0 a 70 anos)</label>
+            <input type="text" name="maisDe70" id="maisDe70">
+
+            <label for="manosDe70">Quantidade de passageiros (+70 anos)</label>
+            <input type="text" name="menosDe70" id="menosDe70">
+
+            
+            <label for="dataSaida">Data de saída</label>
+            <input type="date" name='dataSaida' id="dataSaida">
+
+            <label for="dataRetorno" id='dataRetorno'>data de retorno</label>
             <input type="date" name='dataRetorno'>
-            <input type="submit">
+            <input type="submit" value="Cotar">
         </form>
         
     {% endblock content %}
