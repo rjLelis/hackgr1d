@@ -3,11 +3,8 @@ from datetime import datetime
 import requests
 import json
 
-headers = {
-    'x-api-key': 'b7483bb4-f7f9-4521-a047-223fc550a1cb'
-}
-
 base_url = 'http://gateway.gr1d.io/sandbox/travelace/v1'
+
 
 def sucesso(request):
     return render(request, 'cotacao/sucesso.html')
@@ -34,7 +31,7 @@ def home(request):
         qtd_menos_70_anos = int(request.POST.get('menosDe70'))
         passageiro = {}
         ano_menos_70 = datetime.now().year - 35
-        for _ in range(qtd_mais_70_anos):
+        for _ in range(qtd_menos_70_anos):
             passageiro['nome'] = 'Desconhecido'
             passageiro['dataNascimento'] = f'{ano_menos_70}-01-01'
             passageiros.append(passageiro)
@@ -65,4 +62,3 @@ def home(request):
             return redirect('cotacao:sucesso')
     
     return render(request, 'cotacao/home.html')
-        
