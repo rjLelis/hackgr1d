@@ -3,6 +3,10 @@ from datetime import datetime
 import requests
 import json
 
+headers = {
+    'x-api-key': 'b7483bb4-f7f9-4521-a047-223fc550a1cb'
+}
+
 base_url = 'http://gateway.gr1d.io/sandbox/travelace/v1'
 
 
