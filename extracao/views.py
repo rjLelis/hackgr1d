@@ -3,7 +3,7 @@ import requests
 from .models import Documento
 
 headers = {
-    'x-api-key': 'b7483bb4-f7f9-4521-a047-223fc550a1cb',
+    'x-api-key': '88f89251-85d2-4fc5-9a22-97e5d37142b6',
     'endUserId': 'hackagr1d'
 }
 
@@ -15,7 +15,7 @@ def extrair_rg(request):
     if request.method == 'POST':
         extracao_response = requests.post(f'{base_url}/job/create', headers=headers)
         
-        id_job = rg_response.json().get('idJob')
+        id_job = extracao_response.json().get('idJob')
         tipo = 2
 
         arquivo = request.FILES

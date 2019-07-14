@@ -7,8 +7,8 @@ import requests
 def create_planilha(sender, instance, created, **kwargs):
     if created:
         headers = {
-            'x-api-key': 'b7483bb4-f7f9-4521-a047-223fc550a1cb',
+            'x-api-key': '88f89251-85d2-4fc5-9a22-97e5d37142b6',
             'endUserId': 'hackagr1d'
         }
-        files = {'File': open(instance.arquivo.paht)}
+        files = {'File': open(instance.arquivo.path)}
         requests.put(f'http://gateway.gr1d.oi/sandbox/compline/v1/job/upload/{instance.id_job}/{instance.tipo}', files=files, headers=headers)

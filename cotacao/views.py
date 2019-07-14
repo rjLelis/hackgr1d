@@ -59,7 +59,7 @@ def home(request):
         }
         print(cotacao_request)
         cotacao_response = requests.post(f'{base_url}/Cotacao', headers=headers, data=cotacao_request)
-        print(cotacao_response.text)
+        print(cotacao_response.status_code)
         if cotacao_response != 200:
             return redirect('cotacao:erro')
         else:
