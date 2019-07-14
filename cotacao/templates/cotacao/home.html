@@ -1,5 +1,6 @@
 {% extends 'cotacao/base.html' %}
     {% load static %}
+    {% block title %} Cotação {% endblock title %}
     {% block style %}
         <style>
             input {
@@ -9,6 +10,8 @@
         </style>
     {% endblock style %}
     {% block content %}
+        
+        <h1>Cotação</h1>
         <form method="POST" >
             {% csrf_token %}
             <label for="destinos">Destinos</label>
