@@ -1,0 +1,22 @@
+{% extends 'cotacao/base.html' %}
+    {% load static %}
+    {% block style %}
+        <style>
+            input {
+                display: block;	
+                margin-bottom: 10px;
+            }
+        </style>
+    {% endblock style %}
+    {% block content %}
+        <form method="POST" >
+            {% csrf_token %}
+            <input type="text" name="destinos">
+            <input type="text" name="maisDe70">
+            <input type="text" name="menosDe70">
+            <input type="date" name='dataSaida'>
+            <input type="date" name='dataRetorno'>
+            <input type="submit">
+        </form>
+        
+    {% endblock content %}
